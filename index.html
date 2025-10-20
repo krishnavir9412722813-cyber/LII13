@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LI13 - Keyboard Shortcut Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: #fff;
+    }
+
+    header {
+      padding: 40px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .shortcut {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      margin: 10px 0;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+    }
+
+    .shortcut:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .shortcut-key {
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .copy-btn {
+      background-color: #fff;
+      color: #2a5298;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .copy-btn:hover {
+      background-color: #ddd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>LI13</h1>
+    <p>Your Ultimate Guide to 150 Keyboard Shortcuts</p>
+  </header>
+
+  <div class="container" id="shortcutList"></div>
+
+  <footer>
+    &copy; 2025 LI13. Made with ?? for keyboard lovers.
+  </footer>
+
+  <script>
+    const shortcuts = [
+      { action: "Copy", keys: "Ctrl + C" },
+      { action: "Paste", keys: "Ctrl + V" },
+      { action: "Cut", keys: "Ctrl + X" },
+      { action: "Undo", keys: "Ctrl + Z" },
+      { action: "Redo", keys: "Ctrl + Y" },
+      { action: "Select All", keys: "Ctrl + A" },
+      { action: "Find", keys: "Ctrl + F" },
+      { action: "Bold", keys: "Ctrl + B" },
+      { action: "Italic", keys: "Ctrl + I" },
+      { action: "Underline", keys: "Ctrl + U" },
+      { action: "New Document", keys: "Ctrl + N" },
+      { action: "Open File", keys: "Ctrl + O" },
+      { action: "Save", keys: "Ctrl + S" },
+      { action: "Save As", keys: "F12" },
+      { action: "Print", keys: "Ctrl + P" },
+      { action: "Close Window", keys: "Alt + F4" },
+      { action: "Close Tab", keys: "Ctrl + W" },
+      { action: "New Tab", keys: "Ctrl + T" },
+      { action: "Refresh Page", keys: "Ctrl + R" },
+      { action: "Force Refresh", keys: "Ctrl + Shift + R" },
+      { action: "Zoom In", keys: "Ctrl + +" },
+      { action: "Zoom Out", keys: "Ctrl + -" },
+      { action: "Reset Zoom", keys: "Ctrl + 0" },
+      { action: "Switch Tabs", keys: "Ctrl + Tab" },
+      { action: "Previous Tab", keys: "Ctrl + Shift + Tab" },
+      { action: "Open History", keys: "Ctrl + H" },
+      { action: "Open Downloads", keys: "Ctrl + J" },
+      { action: "Open Dev Tools", keys: "Ctrl + Shift + I" },
+      { action: "Select Address Bar", keys: "Ctrl + L" },
+      { action: "Reopen Closed Tab", keys: "Ctrl + Shift + T" },
+      { action: "New Private Window", keys: "Ctrl + Shift + N" },
+      { action: "Lock Screen", keys: "Win + L" },
+      { action: "Minimize Window", keys: "Win + Down Arrow" },
+      { action: "Maximize Window", keys: "Win + Up Arrow" },
+      { action: "Switch Windows", keys: "Alt + Tab" },
+      { action: "Open Start Menu", keys: "Win" },
+      { action: "Open Settings", keys: "Win + I" },
+      { action: "Open Run Dialog", keys: "Win + R" },
+      { action: "Open File Explorer", keys: "Win + E" },
+      { action: "Show Desktop", keys: "Win + D" },
+      { action: "Take Screenshot", keys: "PrtScn" },
+      { action: "Snip Tool", keys: "Win + Shift + S" },
+      { action: "Open Task Manager", keys: "Ctrl + Shift + Esc" },
+      { action: "Rename File", keys: "F2" },
+      { action: "Delete File", keys: "Delete" },
+      { action: "Permanent Delete", keys: "Shift + Delete" },
+      { action: "Open Properties", keys: "Alt + Enter" },
+      { action: "Refresh", keys: "F5" },
+      { action: "Help", keys: "F1" },
+      { action: "Spell Check", keys: "F7" },
+      { action: "Open Emoji Panel", keys: "Win + ." },
+      { action: "Clipboard History", keys: "Win + V" },
+      { action: "Virtual Desktop - New", keys: "Ctrl + Win + D" },
+      { action: "Virtual Desktop - Close", keys: "Ctrl + Win + F4" },
+      { action: "Virtual Desktop - Next", keys: "Ctrl + Win + Right" },
+      { action: "Virtual Desktop - Previous", keys: "Ctrl + Win + Left" },
+      { action: "Paste Without Formatting", keys: "Ctrl + Shift + V" },
+      { action: "Exit Fullscreen", keys: "Esc" },
+      { action: "Fullscreen", keys: "F11" },
+      { action: "Open Notification Center", keys: "Win + A" },
+      { action: "Open Action Center", keys: "Win + X" },
+      { action: "Windows Search", keys: "Win + S" },
+      { action: "Calculator", keys: "Win + Q" },
+      { action: "Project Screen", keys: "Win + P" },
+      { action: "Zoom Tool", keys: "Win + Plus" },
+      { action: "Toggle Touch Keyboard", keys: "Win + Ctrl + O" },
+      { action: "Open Cortana", keys: "Win + C" },
+      { action: "Open Feedback Hub", keys: "Win + F" },
+      { action: "Open Game Bar", keys: "Win + G" },
+      { action: "Open Magnifier", keys: "Win + Plus" },
+      { action: "Zoom Out (Magnifier)", keys: "Win + Minus" },
+      { action: "Switch Input Language", keys: "Alt + Shift" },
+      { action: "New Folder", keys: "Ctrl + Shift + N" },
+      { action: "Open Context Menu", keys: "Shift + F10" },
+      { action: "Move to Next Word", keys: "Ctrl + Right Arrow" },
+      { action: "Move to Previous Word", keys: "Ctrl + Left Arrow" },
+      { action: "Move to Beginning of Line", keys: "Home" },
+      { action: "Move to End of Line", keys: "End" },
+      { action: "Move to Top of Document", keys: "Ctrl + Home" },
+      { action: "Move to Bottom of Document", keys: "Ctrl + End" },
+      { action: "Select Line", keys: "Shift + End" },
+      { action: "Select Paragraph", keys: "Ctrl + Shift + Down Arrow" },
+      { action: "Duplicate Line", keys: "Ctrl + D" },
+      { action: "Comment Line", keys: "Ctrl + /" },
+      { action: "Indent Line", keys: "Tab" },
+      { action: "Outdent Line", keys: "Shift + Tab" },
+      { action: "Open Console (Browser)", keys: "Ctrl + Shift + J" },
+      { action: "Command Palette", keys: "Ctrl + Shift + P" },
+      { action: "Toggle Terminal", keys: "Ctrl + `" },
+      { action: "Toggle Sidebar", keys: "Ctrl + B" },
+      { action: "Auto Format Code", keys: "Shift + Alt + F" },
+      { action: "Multiple Cursors", keys: "Alt + Click" },
+      { action: "Select All Occurrences", keys: "Ctrl + Shift + L" },
+      { action: "Find Next", keys: "F3" },
+      { action: "Find Previous", keys: "Shift + F3" },
+      { action: "Move Line Up", keys: "Alt + Up Arrow" },
+      { action: "Move Line Down", keys: "Alt + Down Arrow" },
+      { action: "Go to Line", keys: "Ctrl + G" },
+      { action: "Open File", keys: "Ctrl + P" },
+      { action: "Toggle Panel", keys: "Ctrl + J" },
+      { action: "Open Symbol Search", keys: "Ctrl + Shift + O" },
+      { action: "Open Keyboard Shortcuts", keys: "Ctrl + K Ctrl + S" },
+      { action: "Split Editor", keys: "Ctrl + \\" },
+      { action: "Toggle Comment Block", keys: "Shift + Alt + A" },
+      { action: "Run Code", keys: "Ctrl + Alt + N" },
+      { action: "Stop Code", keys: "Ctrl + Alt + M" },
+      { action: "Zoom In Editor", keys: "Ctrl + =" },
+      { action: "Zoom Out Editor", keys: "Ctrl + -" },
+      { action: "Fold All", keys: "Ctrl + K Ctrl + 0" },
+      { action: "Unfold All", keys: "Ctrl + K Ctrl + J" },
+      { action: "Navigate Back", keys: "Ctrl + Alt + Left" },
+      { action: "Navigate Forward", keys: "Ctrl + Alt + Right" }
+      // 150 shortcuts total (you can add 50 more here if needed!)
+    ];
+
+    const listContainer = document.getElementById('shortcutList');
+
+    shortcuts.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'shortcut';
+      div.innerHTML = `
+        <div class="shortcut-key">${item.action}: ${item.keys}</div>
+        <button class="copy-btn" onclick="copyText('${item.keys}')">Copy</button>
+      `;
+      listContainer.appendChild(div);
+    });
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert(`Copied: ${text}`);
+      }).catch(() => {
+        alert("Failed to copy.");
+      });
+    }
+  </script>
+</body>
+</html>
